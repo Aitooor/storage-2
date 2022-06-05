@@ -24,5 +24,5 @@ jobs:
                 if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
                 run: './gradlew publish'
                 env:
-                    COSMO_CI_USER: '${{ secrets.NASGAR_CI_USER }}'
-                    COSMO_CI_PASSWORD: '${{ secrets.NASGAR_CI_PASSWORD }}'
+                    NASGAR_CI_USER: '${{ secrets.NASGAR_CI_USER }}'
+                    NASGAR_CI_PASSWORD: '${{ secrets.NASGAR_CI_PASSWORD }}'
