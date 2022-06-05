@@ -1,0 +1,36 @@
+[versions]
+annotations = "23.0.0"
+commons = "0.3.0"
+
+gson = "2.9.0"
+
+# mongo distributions
+mongo-jack = "4.3.0"
+mongo-driver = "4.4.1"
+
+jedis = "4.1.1"
+
+# sql distributions
+hikari = "4.0.3"
+jdbi = "3.27.1"
+
+# spigot distributions
+spigot = "1.8.8-R0.1-SNAPSHOT"
+
+[libraries]
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# mongo distributions
+mongo-jack = { module = "org.mongojack:mongojack", name = "mongo-jack", version.ref = "mongo-jack" }
+mongo-driver = { module = "org.mongodb:mongodb-driver-sync", name = "mongo-driver", version.ref = "mongo-driver" }
+
+jedis = { group = "redis.clients", name = "jedis", version.ref = "jedis" }
+
+# sql distributions
+hikari = { module = "com.zaxxer:HikariCP", name = "hikari", version.ref = "hikari" }
+jdbi = { module = "org.jdbi:jdbi3-core", name = "jdbi", version.ref = "jdbi" }
+
+# spigon distributions
+spigot = { module = "org.spigotmc:spigot-api", name = "spigot", version.ref = "spigot" }

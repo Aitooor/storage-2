@@ -1,0 +1,28 @@
+name: 'build'
+on: [ 'pull_request', 'push' ]
+jobs:
+    build:
+        if: ${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}
+        runs-on: 'ubuntu-latest'
+        env:
+            ORG_GRADLE_PROJECT_CosmoLibsUsername: '${{ secrets.COSMO_LIBS_USER }}'
+            ORG_GRADLE_PROJECT_CosmoLibsPassword: '${{ secrets.COSMO_LIBS_PASSWORD }}'
+        steps:
+            -   name: 'checkout repo'
+                uses: 'actions/checkout@v2'
+            -   name: 'setup JDK'
+                uses: 'actions/setup-java@v1'
+                with:
+                    java-version: 8
+            -   name: 'mongo'
+                uses: supercharge/mongodb-github-action@1.7.0
+                with:
+                    mongodb-version: '5.0'
+            -   name: 'build'
+                run: './gradlew build'
+            -   name: 'publish'
+                if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+                run: './gradlew publish'
+                env:
+                    COSMO_CI_USER: '${{ secrets.COSMO_CI_USER }}'
+                    COSMO_CI_PASSWORD: '${{ secrets.COSMO_CI_PASSWORD }}'
