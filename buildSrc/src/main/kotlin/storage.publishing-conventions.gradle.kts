@@ -15,17 +15,16 @@ publishing {
                 uri(releaseRepository)
             }
 
-            /*
+            
             credentials {
-                val userKey = "COSMO_CI_USER"
-                val pwdKey = "COSMO_CI_PASSWORD"
+                val userKey = "NASGAR_CI_USER"
+                val pwdKey = "NASGAR_CI_PASSWORD"
                 username = project.properties[userKey] as String?
                     ?: System.getenv(userKey)
                 password = project.properties[pwdKey] as String?
                     ?: System.getenv(pwdKey)
             }
 
-             */
         }
     }
     publications {
