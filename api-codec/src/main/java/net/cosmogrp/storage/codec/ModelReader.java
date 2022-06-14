@@ -152,4 +152,6 @@ public interface ModelReader<R> {
             Function<ModelReader<R>, T> parser
     );
 
+    R getSource();
+
 }

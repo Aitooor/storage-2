@@ -10,7 +10,7 @@ import net.cosmogrp.storage.mongo.codec.DocumentCodec;
 import net.cosmogrp.storage.mongo.codec.MongoModelParser;
 import org.bson.Document;
 
-import static net.cosmogrp.commons.Validate.notNull;
+import static net.cosmogrp.storage.Validate.notNull;
 
 public class MongoModelServiceBuilder<T extends Model & DocumentCodec>
         extends LayoutModelServiceBuilder<T, MongoModelServiceBuilder<T>> {

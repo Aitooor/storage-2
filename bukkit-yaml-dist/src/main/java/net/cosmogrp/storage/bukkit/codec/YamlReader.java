@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
-import static net.cosmogrp.commons.Validate.state;
+import static net.cosmogrp.storage.Validate.state;
 
 public class YamlReader implements ModelReader<Map<String, Object>> {
 
@@ -123,4 +123,10 @@ public class YamlReader implements ModelReader<Map<String, Object>> {
 
         return children;
     }
+
+    @Override
+    public Map<String, Object> getSource() {
+        return parentSection.getValues(false);
+    }
+
 }

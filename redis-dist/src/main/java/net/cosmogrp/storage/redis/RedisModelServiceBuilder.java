@@ -7,7 +7,7 @@ import net.cosmogrp.storage.dist.DelegatedCachedModelService;
 import net.cosmogrp.storage.model.Model;
 import net.cosmogrp.storage.redis.connection.RedisCache;
 
-import static net.cosmogrp.commons.Validate.notNull;
+import static net.cosmogrp.storage.Validate.notNull;
 
 public class RedisModelServiceBuilder<T extends Model>
         extends LayoutModelServiceBuilder<T, RedisModelServiceBuilder<T>> {

@@ -6,12 +6,14 @@ import net.cosmogrp.storage.bukkit.codec.YamlCodec;
 import net.cosmogrp.storage.bukkit.codec.YamlModelParser;
 import net.cosmogrp.storage.dist.DelegatedCachedModelService;
 import net.cosmogrp.storage.model.Model;
+import org.apache.commons.lang.Validate;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
 
-import static net.cosmogrp.commons.Validate.notNull;
-import static net.cosmogrp.commons.Validate.state;
+import static net.cosmogrp.storage.Validate.notNull;
+import static net.cosmogrp.storage.Validate.state;
+
 
 public class YamlModelServiceBuilder<T extends Model & YamlCodec>
         extends LayoutModelServiceBuilder<T, YamlModelServiceBuilder<T>> {
@@ -49,6 +51,7 @@ public class YamlModelServiceBuilder<T extends Model & YamlCodec>
     @Override
     public ModelService<T> build() {
         check();
+
         notNull(modelParser, "modelParser");
         notNull(folder, "folder");
 
@@ -59,7 +62,7 @@ public class YamlModelServiceBuilder<T extends Model & YamlCodec>
         }
 
         YamlModelService<T> modelService =
-                new YamlModelService<>(executor, folder, modelParser);
+                new YamlModelService<>(executor, folder, modelParser, cacheModelService, resolverRegistry);
 
         if (cacheModelService == null) {
             return modelService;

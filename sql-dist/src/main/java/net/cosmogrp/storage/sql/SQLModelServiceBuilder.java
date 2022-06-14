@@ -8,7 +8,7 @@ import net.cosmogrp.storage.sql.identity.MapSerializer;
 import net.cosmogrp.storage.sql.identity.Table;
 import org.jdbi.v3.core.mapper.RowMapper;
 
-import static net.cosmogrp.commons.Validate.notNull;
+import static net.cosmogrp.storage.Validate.notNull;
 
 public class SQLModelServiceBuilder<T extends Model & MapSerializer>
         extends LayoutModelServiceBuilder<T, SQLModelServiceBuilder<T>> {

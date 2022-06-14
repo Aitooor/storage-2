@@ -108,6 +108,11 @@ public class DocumentReader implements ModelReader<Document> {
         return children;
     }
 
+    @Override
+    public Document getSource() {
+        return document;
+    }
+
     public static DocumentReader create(Document document) {
         return new DocumentReader(document);
     }
