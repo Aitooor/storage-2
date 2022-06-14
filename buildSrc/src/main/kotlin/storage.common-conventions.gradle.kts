@@ -6,12 +6,10 @@ plugins {
 
 repositories {
     mavenLocal()
-    /*
-    maven("https://repo.cosmogrp.net/repository/libs-public/") {
-        name = "CosmoLibs"
+    maven("https://repo.nasgar.online/repository/nasgar-public/") {
+        name = "nasgar-public"
         credentials(PasswordCredentials::class)
     }
-    */
     mavenCentral()
 }
 
